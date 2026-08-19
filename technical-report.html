@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Technical Reporting | Five Oceans Marine</title>
+
+<link rel="stylesheet" href="CSS/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    .service-hero {
+        position: relative;
+        height: 55vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 90px 25px 0;
+        overflow: hidden;
+    }
+
+    .service-hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .service-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            rgba(5, 18, 34, 0.55),
+            rgba(5, 18, 34, 0.80)
+        );
+        z-index: 1;
+    }
+
+    .service-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        color: white;
+    }
+
+    .eyebrow {
+        display: block;
+        margin-bottom: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: #3EA8FF;
+    }
+
+    .service-hero h1 {
+        font-size: 64px;
+        line-height: 1.1;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    .service-hero p {
+        max-width: 760px;
+        margin: 0 auto 40px;
+        font-size: 21px;
+        line-height: 1.8;
+        color: #d4dce8;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 17px 40px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 50px;
+        color: white;
+        font-size: 17px;
+        text-decoration: none;
+        transition: 0.35s;
+    }
+
+    .button:hover {
+        background: white;
+        color: #07192E;
+        transform: translateY(-3px);
+    }
+
+    .service-section {
+        background: white;
+        color: #111;
+        padding: 120px 8%;
+    }
+
+    .service-intro {
+        max-width: 900px;
+        margin: 0 auto 70px;
+        text-align: center;
+    }
+
+    .section-label {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #0071E3;
+    }
+
+    .service-intro h2 {
+        font-size: 48px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+        color: #07192E;
+    }
+
+    .service-intro p {
+        font-size: 19px;
+        line-height: 1.9;
+        color: #555;
+        margin-bottom: 25px;
+    }
+
+    .service-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .service-card {
+        background: #f5f7fa;
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid #e5e7eb;
+        transition: 0.35s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.10);
+    }
+
+    .service-card h3 {
+        font-size: 27px;
+        margin-bottom: 18px;
+        color: #07192E;
+    }
+
+    .service-card p {
+        font-size: 17px;
+        line-height: 1.8;
+        color: #555;
+    }
+
+    .service-cta {
+        background: #07192E;
+        color: white;
+        padding: 120px 25px;
+        text-align: center;
+    }
+
+    .service-cta h2 {
+        font-size: 48px;
+        margin-bottom: 25px;
+    }
+
+    .service-cta p {
+        max-width: 800px;
+        margin: 0 auto 40px;
+        font-size: 20px;
+        line-height: 1.8;
+        color: #d4dce8;
+    }
+
+    .service-footer {
+        background: #07192E;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 30px;
+        text-align: center;
+    }
+
+    .service-footer p {
+        color: #8995a5;
+        font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+
+        nav {
+            padding: 0 25px;
+        }
+
+        .logo {
+            margin-left: 0;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 90px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 90px);
+            background: rgba(7, 25, 46, 0.97);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            transform: translateX(100%);
+            transition: 0.4s;
+            z-index: 9999;
+        }
+
+        .nav-links.active {
+            transform: translateX(0);
+        }
+
+        .nav-links a {
+            font-size: 25px;
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+            margin-left: auto;
+        }
+
+        .service-hero {
+            height: auto;
+            min-height: 65vh;
+            padding: 150px 25px 80px;
+        }
+
+        .service-hero h1 {
+            font-size: 46px;
+        }
+
+        .service-hero p {
+            font-size: 18px;
+        }
+
+        .service-section {
+            padding: 90px 25px;
+        }
+
+        .service-intro h2 {
+            font-size: 38px;
+        }
+
+        .service-intro p {
+            font-size: 17px;
+        }
+
+        .service-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .service-card {
+            padding: 30px;
+        }
+
+        .service-cta {
+            padding: 90px 25px;
+        }
+
+        .service-cta h2 {
+            font-size: 38px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<nav>
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="Five Oceans Marine">
+        </a>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="index.html#about">About</a>
+        </li>
+
+        <li>
+            <a href="index.html#services">Services</a>
+        </li>
+
+        <li>
+            <a href="index.html#contact">Contact</a>
+        </li>
+
+        <li>
+            <a href="form.html" class="nav-button">
+                Request Service
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</nav>
+
+
+<section class="service-hero">
+
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="service-hero-video"
+    >
+        <source src="images/marine-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="service-hero-overlay"></div>
+
+    <div class="service-hero-content">
+
+        <span class="eyebrow">
+            MARINE INVESTIGATIONS
+        </span>
+
+        <h1>
+            Technical Reporting
+        </h1>
+
+        <p>
+            Clear and independent technical reporting of marine
+            inspections, investigations, incidents, damage and
+            operational findings.
+        </p>
+
+        <a href="form.html" class="button">
+            Fill Up the Form
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="service-section">
+
+    <div class="service-intro">
+
+        <span class="section-label">
+            TECHNICAL REPORTING
+        </span>
+
+        <h2>
+            Clear, Independent Technical Reports
+        </h2>
+
+        <p>
+            Five Oceans Marine provides independent technical
+            reporting services following marine inspections,
+            surveys, investigations and operational activities.
+        </p>
+
+        <p>
+            Our reports present observations and findings in a
+            clear and structured format, allowing clients to
+            understand the condition of the vessel, cargo,
+            equipment or operation assessed.
+        </p>
+
+        <p>
+            Reports can incorporate inspection findings,
+            photographic evidence, measurements, relevant
+            documentation and other information collected during
+            the assignment.
+        </p>
+
+        <p>
+            The objective is to provide clients with an accurate,
+            professional and independent record that can support
+            operational decisions, claims handling, investigations
+            and further technical assessment.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service-card">
+
+            <h3>
+                Inspection Reports
+            </h3>
+
+            <p>
+                Clear reporting of marine inspections, including
+                observations, identified conditions and relevant
+                findings.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Survey Reports
+            </h3>
+
+            <p>
+                Structured reports documenting survey activities,
+                observations, vessel or cargo condition and
+                relevant supporting information.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Investigation Reports
+            </h3>
+
+            <p>
+                Independent reporting of marine incidents,
+                damage investigations, failures and other
+                operational events.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Technical Findings
+            </h3>
+
+            <p>
+                Presentation of technical observations and
+                findings in a clear format suitable for review
+                by relevant stakeholders.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Photographic Documentation
+            </h3>
+
+            <p>
+                Integration of relevant photographs to document
+                vessel, cargo, equipment, damage and operational
+                conditions.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Condition Documentation
+            </h3>
+
+            <p>
+                Detailed documentation of observed conditions
+                affecting vessels, cargo, machinery, equipment
+                and marine operations.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Evidence & Records
+            </h3>
+
+            <p>
+                Organisation of relevant observations, documents,
+                photographs and other available information
+                supporting the technical assessment.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>
+                Professional Reporting
+            </h3>
+
+            <p>
+                Professionally structured independent reports
+                prepared to provide clients with a clear and
+                reliable record of the assignment.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-cta">
+
+    <h2>
+        Need a Technical Report?
+    </h2>
+
+    <p>
+        Contact Five Oceans Marine for independent technical
+        reporting following inspections, surveys, investigations
+        and marine operations.
+    </p>
+
+    <a href="form.html" class="button">
+        Fill Up the Form
+    </a>
+
+</section>
+
+
+<footer class="service-footer">
+
+    <p>
+        © 2026 Five Oceans Marine
+    </p>
+
+</footer>
+
+
+<script>
+
+    const mobileMenuBtn =
+        document.querySelector(".mobile-menu-btn");
+
+    const navLinks =
+        document.querySelector(".nav-links");
+
+    if (mobileMenuBtn && navLinks) {
+
+        mobileMenuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+    }
+
+</script>
+```
+
+</body>
+</html>
